@@ -2,7 +2,192 @@
 ul,li { list-style: none; }
 a{ text-decoration: none; }
 img {display: block;}
-html,body {width: 100%;height: 100%;}
+html,body {
+  width: 100%;height: 100%;
+  font-family: 'Pretendard-Regular';
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*depth*/
+/*full-menu-product*/
+.fixed {
+  position: fixed;
+  /* max-width: 1200px; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 100;
+  text-align: center;
+  padding: 20px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+}
+.fixed > .full-menu-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 1200px;
+}
+.fixed > .full-menu-box > .full-menu-product {
+  padding: 50px;
+  width: 40%;
+  text-align: left;
+  border-right: 1px solid #ccc;
+}
+.full-menu-product > .f-depth1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+.depth2-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.depth2-wrap > .depth2 {
+  width: 50%;
+  margin-top: 20px;
+}
+.depth2-wrap > .depth2 > li > a {
+  color: #111;
+  font-weight: 500;
+}
+.depth3 {
+  margin-top: 20px;
+}
+.depth3 > li > a{
+  font-size: 14px;
+  color: #555;
+}
+.depth3 > li > a:hover {
+  text-decoration: underline;
+}
+
+/*full-menu-etc*/
+
+.fixed > .full-menu-box >  .full-menu-etc {
+  width: 60%;
+  display: flex;
+}
+.fixed > .full-menu-box > .full-menu-etc > .f-menu-item {
+  width: 50%;
+  border-right: 1px solid #ccc;
+}
+
+.full-menu-etc > .f-menu-item {
+  height: 100%;
+}
+.full-menu-etc > .f-menu-item > .top {
+  height: 45%;
+  padding: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.full-menu-etc > .f-menu-item > .top > .f-depth1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.full-menu-etc > .f-menu-item > .top > .f-depth2 > .f-depth2-menu  {
+  margin-top: 15px;
+}
+.full-menu-etc > .f-menu-item > .top > .f-depth2 > .f-depth2-menu > a {
+  color: #111;
+  font-size: 16px;
+}
+.full-menu-etc > .f-menu-item > .top > .f-depth2 > .f-depth2-menu > a:hover,
+.full-menu-etc > .f-menu-item > .bottom > .f-depth2 > li a:hover {
+  text-decoration: underline;
+}
+.full-menu-etc > .f-menu-item:first-child > .bottom {
+  height: 55%;
+  background: url(image/full_menu_img.png)center no-repeat;
+  background-size: cover;
+  padding: 20px 20px;
+}
+.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box {
+  border: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 10px 5px;
+}
+.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box > input::placeholder {
+  color: #fff;
+}
+
+.full-menu-etc > .f-menu-item > .bottom > .f-depth2 > li a {
+  color: #111;
+}
+.full-menu-etc > .f-menu-item > .bottom:last-child > .f-depth1 {
+  padding-top: 50px;
+  /* position: relative; */
+  /* border-top: 1px solid #ccc; */
+}
+.full-menu-etc > .f-menu-item > .bottom > .f-depth1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+.full-menu-etc > .f-menu-item > .bottom > .f-depth2 > .f-depth2-menu  {
+  margin-top: 15px;
+}
+
+/*닫기버튼*/
+.close-btn{
+  position: absolute;
+  top: 20px; right: 20px;
+  width: 45px;
+  height:45px;
+  cursor: pointer;
+}
+.close-btn > span {
+  display: block;
+  width: 35px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+}
+.close-btn > span:nth-child(1) {
+  transform: rotate(45deg);
+  transition: 0.5s;
+  top: 11px; right:1px;
+  /* outline: 1px solid red; */
+}
+.close-btn > span:nth-child(2) {
+  /* margin-top: 10px; */
+  transform: rotate(135deg);
+  top: 11px; right: 1.2px;
+  transition: 0.5s;
+}
+/* 닫기버튼 hover */
+.close-btn:hover span:first-child{
+  transform: rotate(130deg);
+}
+.close-btn:hover span:last-child{
+  transform: rotate(220deg);
+}
+
+/*depth end*/
+
 
 
 #header {
@@ -66,143 +251,6 @@ html,body {width: 100%;height: 100%;}
   color: #fff;
 }
 
-/*depth*/
-/*full-menu-product*/
-#header .gnb-wrap > .menu-btn > .fixed {
-  display: none;
-  position: fixed;
-  /* max-width: 1200px; */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.2);
-  z-index: 100;
-  text-align: center;
-  padding: 20px 0;
-  /* overflow-y: scroll; */
-}
-#header .gnb-wrap > .menu-btn > .fixed > .full-menu-box {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  background-color: #fff;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 1200px;
-}
-#header .gnb-wrap > .menu-btn > .fixed > .full-menu-box > .full-menu-product {
-  padding: 50px;
-  width: 40%;
-  text-align: left;
-  border-right: 1px solid #ccc;
-}
-.full-menu-product > .f-depth1 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
-}
-.depth2-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-.depth2-wrap > .depth2 {
-  width: 50%;
-  margin-top: 20px;
-}
-.depth2-wrap > .depth2 > li > a {
-  color: #111;
-  font-weight: 500;
-}
-.depth3 {
-  margin-top: 20px;
-}
-.depth3 > li > a{
-  font-size: 14px;
-  color: #555;
-}
-
-/*full-menu-etc*/
-
-#header .gnb-wrap > .menu-btn > .fixed > .full-menu-box >  .full-menu-etc {
-  width: 60%;
-  display: flex;
-}
-#header .gnb-wrap > .menu-btn > .fixed > .full-menu-box > .full-menu-etc > .f-menu-item {
-  width: 50%;
-  border-right: 1px solid #ccc;
-}
-
-.full-menu-etc > .f-menu-item {
-  height: 100%;
-}
-.full-menu-etc > .f-menu-item > .top {
-  height: 40%;
-  padding: 50px;
-  /* outline: 1px solid red; */
-}
-.full-menu-etc > .f-menu-item > .top > .f-depth1 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 20px;
-}
-.full-menu-etc > .f-menu-item > .top > .pad{ /*😚😚😙*/
-  padding-bottom: 30px !important;
-  border-bottom: 1px solid #ccc;
-  width: 100%;
-}
-.full-menu-etc > .f-menu-item > .top > .f-depth2 > .f-depth2-menu  {
-  margin-top: 15px;
-}
-.full-menu-etc > .f-menu-item > .top > .f-depth2 > .f-depth2-menu > a {
-  color: #111;
-  font-size: 16px;
-}
-.full-menu-etc > .f-menu-item:first-child > .bottom {
-  height: 60%;
-  background: url(image/full_menu_img.png)center no-repeat;
-  background-size: cover;
-  padding: 20px 20px;
-}
-.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box {
-  border: 1px solid #fff;
-  display: flex;
-  justify-content: space-between;
-  align-self: center;
-  padding: 10px 5px;
-}
-.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box > input {
-  border: none;
-  outline: none;
-  background-color: transparent;
-}
-.full-menu-etc > .f-menu-item:first-child > .bottom > .search-box > input::placeholder {
-  color: #fff;
-}
-
-.full-menu-etc > .f-menu-item > .bottom > .f-depth2 > li a {
-  color: #111;
-}
-.full-menu-etc > .f-menu-item > .bottom:last-child > .f-depth1 {
-  padding-top: 50px;
-  /* border-top: 1px solid #ccc; */
-}
-.full-menu-etc > .f-menu-item > .bottom > .f-depth1 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #111;
-  margin-bottom: 20px;
-}
-.full-menu-etc > .f-menu-item > .bottom > .f-depth2 > .f-depth2-menu  {
-  margin-top: 15px;
-}
-
-
-
-
-
-
 /*gnb icon*/
 #header .gnb-wrap > .gnb-icon {
   display: flex;
@@ -210,4 +258,313 @@ html,body {width: 100%;height: 100%;}
   gap: 20px;
   cursor: pointer;
   justify-content: flex-end;
+}
+
+
+/*작은화면 헤더*/
+#mini-header {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: none;
+}
+#mini-header > .container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  background: #fff;
+}
+#mini-header > .container > .gnb-wrap {
+  width: 100%;
+  height: 60px;
+  padding: 0 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#mini-header > .container > .gnb-wrap  > .menu-btn,
+#mini-header > .container > .gnb-wrap  > .gnb-icon
+ {
+  cursor: pointer;
+}
+#mini-header > .container > .gnb-wrap > .logo {
+  width: 108px;
+  height: 60px;
+
+}
+#mini-header > .container > .gnb-wrap > .logo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*배경 비디오*/
+#mini-header > video {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  top: 60px; left: 0;
+  object-fit: cover;
+}
+
+
+/*멀티프로오븐*/
+#multioven {
+  width: 100%;
+  /* padding: 35px 45px; */
+  background-color: #fff;
+  position: relative;
+}
+#multioven .container {
+  background: url(image/prooven.png) no-repeat;
+  background-position: right;
+  background-size: 500px;
+  height: 600px;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 45px;
+}
+#multioven .tit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  gap: 30px;
+} 
+#multioven .tit h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+#multioven .tit p {
+  font-size: 16px;
+  color: #555;
+}
+#multioven .tit a {
+  margin-top: 10px;
+  color: #111;
+  width: fit-content;
+  padding: 15px 40px;
+  text-align: center;
+  border: 1px solid #111;
+  transition: 0.3s;
+}
+#multioven .tit a:hover {
+  border: 1px solid #fff;
+  color: #fff;
+  background: #111;
+}
+
+/*멀티프로오븐 상세*/
+#multioven-detail {
+  width: 100%;
+  height: auto;
+  background-color: #F7F7F7;
+}
+#multioven-detail > .container {
+  display: flex;
+  width: 100%;
+  /* max-width: 1200px; */
+  margin: auto;
+  /* height: 800px; */
+}
+#multioven-detail > .container > .oven-img {
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 50%;
+}
+#multioven-detail > .container > .oven-img > img {
+  width: 60%
+  /* height: 416px; */
+}
+#multioven-detail > .container > .oven-img > h2 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+#multioven-detail > .container > .oven-img > p {
+  font-size: 20px;
+  color: #333;
+}
+/* #multioven-detail > .container > video {
+  width: 50%;
+} */
+#multioven-detail > .container > video{
+  width :50%;
+  /* height: 100%; */
+  padding: 0 ;
+  object-fit: cover;
+  display: inline-block;
+}
+
+/* 진공 고속 블렌더 */
+#blender {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  background-image: url(image/blend.png);
+  background-position: right center;
+}
+#blender .container {
+  width: 1200px;
+  margin: auto;
+}
+#blender .tit {
+  position: absolute;
+  /* padding: 0 45px; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  top: 50%;
+  padding: 0 40px;
+  transform: translateY(-50%);
+} 
+#blender .tit h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+#blender .tit p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+}
+#blender .tit a {
+  margin-top: 10px;
+  color: #fff;
+  width: fit-content;
+  padding: 15px 40px;
+  text-align: center;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+#blender .tit a:hover {
+  border: 1px solid #111;
+  color: #fff;
+  background: #111;
+}
+#blender .t-img {
+  width: 100%;
+  height: 600px;
+}
+#blender .t-img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* 진공 고속 블렌더 설명이미지 */
+#blender-detail {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;  /*이미지가 넘어가도 안 짤리게 할 거면 hidden 제거 */
+}
+#blender-detail > .container {
+  display: flex;
+  width: 100%;
+  /* height: 100%; */
+  /* padding: 120px 0; */
+}
+#blender-detail > .container > .blender-img {
+  width: 50%;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  padding: 120px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#blender-detail > .container > .blender-img > h2 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #333;
+}
+#blender-detail > .container > .blender-img > p {
+  font-size: 20px;
+  color: #333;
+}
+#blender-detail > .container > .blender-img > img {
+  object-fit: cover;
+}
+#blender-detail > .container > .moving-img {
+  width: 50%;
+  height: auto;
+  /* position: relative; */
+}
+#blender-detail > .container > .moving-img img {
+  /* width: 100%;
+  height: 100%; */
+  object-fit: cover;
+  position: absolute;
+  left:90vw; /* 오른쪽 화면 밖에서 시작 */
+  transform: translateY(-50%);
+  transition: transform 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width : 1020px){
+  #header {
+    display: none;
+  }
+  #mini-header {
+    display: block;
+  }
+  #multioven .container {
+    background: linear-gradient(0deg, rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(image/prooven.png) no-repeat;
+    background-position: right;
+    background-size: 400px;
+  }
+}
+@media screen and (max-width : 950px){
+  #multioven .container {
+    background: linear-gradient(0deg, rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(image/prooven.png) no-repeat;
+    background-position: right;
+    background-size: 350px;
+    padding: 0 45px;
+  }
+  #multioven-detail > .container {
+    flex-wrap: wrap;
+  }
+  #multioven-detail > .container > .oven-img {
+    width: 100%;
+    height: 100%;
+  }
+  #multioven-detail > .container > .oven-img > img {
+    width: 50%
+  }
+  #multioven-detail > .container > video {
+    width: 100%;
+    /* height: 100%; */
+  }
+}
+@media screen and (max-width : 768px){
+  #multioven-detail > .container > video {
+    display: none;
+  }
+}
+
+@media screen and (max-width : 600px){
+  #multioven .container {
+    background: linear-gradient(0deg, rgba(255,255,255,0.5),rgba(255,255,255,0.5)),url(image/prooven.png) no-repeat;
+    background-position: right;
+    background-size: 300px;
+    padding: 0 20px;
+  }
+  #multioven-detail > .container > .oven-img {
+    padding: 80px 0;
+  }
 }
