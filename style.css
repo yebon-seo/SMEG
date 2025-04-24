@@ -230,6 +230,197 @@ body {
 
 /*depth end*/
 
+/*작은화면 depth*/
+/*작은화면 full-menu-product*/
+.s-menu {
+  width: 100%;
+  height: auto;/*😊*/
+  background-color: #fff;
+}
+.s-menu header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+.s-menu header img {
+  width: 40px;
+  height: 60px;
+  /* object-fit: cover; */
+}
+.s-cBtn {
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.s-cBtn:hover {
+  transform: rotate(230deg);
+}
+.s-cBtn span{
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: #555;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}
+.s-cBtn span:first-child {
+  transform: rotate(90deg);
+  transform-origin:center center;
+}
+.s-cBtn span:last-child {
+  transform: rotate(180deg);
+  transform-origin:center center;
+}
+
+/*미들*/
+.middle {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.middle input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  padding-bottom: 5px;
+}
+.middle input::placeholder {
+  font-weight: 400;
+  font-size: 15px;
+}
+.middle a {
+  border-bottom: 1px solid #333;
+  /* padding-bottom: 10px; */
+}
+/* .middle a img {
+  width: 2%;
+} */
+
+.login {
+  display: flex;
+  gap: 1vw;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+.login button {
+  width: 50%;
+  height: 40px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border: 1px solid #111;
+  color: #111;
+}
+.s-fullmenu > .s-f-depth1 {
+  display: flex;
+  flex-direction: column;
+}
+.s-fullmenu > .s-f-depth1 > li{
+  width: 100%;
+  line-height: 60px;
+  border-bottom: 1px solid #ccc;
+}
+.s-fullmenu > .s-f-depth1 > li > a{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  line-height: 60px;
+  color: #111;
+}
+.s-fullmenu > .s-f-depth1 > li:nth-child(2) a::after,
+.s-fullmenu > .s-f-depth1 > li:nth-child(3) a::after,
+.s-fullmenu > .s-f-depth1 > li:nth-child(5) a::after {
+  content: "";
+  display: block;
+  width: 30px;
+  background: url(image/plus.png) no-repeat;
+  background-position: center;
+}
+
+/*bg-black*/
+.s-fullmenu > .s-f-depth1 > .bg-black {
+  background-color: #111;
+  height: 50px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-left: 20px;
+}
+.s-fullmenu .s-f-depth1 > .bg-black img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.s-fullmenu .s-f-depth1 > .bg-black > a{
+  line-height: 50px !important;
+  color: #fff;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  padding-right: 20px;
+  justify-content: space-between;
+}
+
+/*가상요소*/
+.s-fullmenu .s-f-depth1 > .bg-black > a::after {
+  content: "";
+  display: block;
+  width: 30px;
+  background-image: url(image/chevron-right.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*depth2*/
+.s-f-depth1 > .depth2-wrap{  
+  display: none;
+  max-height: 0;
+  width:100%;
+}
+
+.s-f-depth1 > .depth2-wrap .depth2 > li {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+.s-f-depth1 > .depth2-wrap  .depth2:nth-of-type(1) > li a{
+  border-top: 1px solid #333;
+}
+.s-f-depth1 > .depth2-wrap  .depth2:last-child > li {
+  border-bottom:none;
+}
+.s-f-depth1 > .depth2-wrap  .depth2 > li > a {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+}
+/*가상요소*/
+.s-f-depth1 > .depth2-wrap > .depth2 > li > a::after {
+  content: "";
+  display: block;
+  width: 30px;
+  background: url(image/plus.png) no-repeat;
+  background-position: center;
+}
+
+
+/*depth3*/
+.depth3 {
+  display: none;
+}
+/*작은화면 depth end*/
 
 
 #header {
@@ -335,7 +526,7 @@ body {
   align-items: center;
 }
 
-#mini-header>.container>.gnb-wrap>.menu-btn,
+#mini-header>.container>.gnb-wrap>.menu-btn2,
 #mini-header>.container>.gnb-wrap>.gnb-icon {
   cursor: pointer;
 }
@@ -920,6 +1111,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  gap: 25px;
 }
 #footer .container .info-wrap > .r-info ul{
   display: flex;
@@ -944,6 +1136,14 @@ body {
   font-size: 16px;
   color: #666;
 }
+#footer .container .info-wrap > .r-info > .service {
+  width: 100%;
+}
+#footer .container .info-wrap > .r-info > .service img{
+  width: 100%;
+  object-fit: cover;
+}
+
 
 
 
