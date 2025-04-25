@@ -339,9 +339,9 @@ body {
   line-height: 60px;
   color: #111;
 }
-.s-fullmenu > .s-f-depth1 > li:nth-child(2) a::after,
-.s-fullmenu > .s-f-depth1 > li:nth-child(3) a::after,
-.s-fullmenu > .s-f-depth1 > li:nth-child(5) a::after {
+.s-fullmenu > .s-f-depth1 > li:nth-child(2) > a::after,
+.s-fullmenu > .s-f-depth1 > li:nth-child(3) > a::after,
+.s-fullmenu > .s-f-depth1 > li:nth-child(5) > a::after {
   content: "";
   display: block;
   width: 30px;
@@ -384,30 +384,40 @@ body {
 }
 
 /*depth2*/
-.s-f-depth1 > .depth2-wrap{  
+.s-f-depth1 > li >.depth2-wrap2 {  
   display: none;
   max-height: 0;
   width:100%;
+  transition: 0.3s;
+  overflow:hidden;
 }
 
-.s-f-depth1 > .depth2-wrap .depth2 > li {
+.s-f-depth1 > li > .depth2-wrap2 > .depth2 > li {
   cursor: pointer;
   border-bottom: 1px solid #ccc;
 }
-.s-f-depth1 > .depth2-wrap  .depth2:nth-of-type(1) > li a{
+.s-f-depth1 > li:not(:nth-child(2)) > .depth2-wrap2 > .depth2 > li:last-child {
+  border-bottom: none;
+}
+
+.s-f-depth1 > li:nth-child(2) > .depth2-wrap2 > .depth2:last-child > li {
+  border-bottom: none;
+}
+
+.s-f-depth1 > li > .depth2-wrap2 .borderTop > a{
   border-top: 1px solid #333;
 }
-.s-f-depth1 > .depth2-wrap  .depth2:last-child > li {
-  border-bottom:none;
-}
-.s-f-depth1 > .depth2-wrap  .depth2 > li > a {
+
+.s-f-depth1 > li > .depth2-wrap2 .depth2 > li > a {
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   color: #888;
 }
+
+
 /*가상요소*/
-.s-f-depth1 > .depth2-wrap > .depth2 > li > a::after {
+.s-f-depth1 > .submenu > .depth2-wrap2 > .depth2 > li > a::after {
   content: "";
   display: block;
   width: 30px;
@@ -415,11 +425,39 @@ body {
   background-position: center;
 }
 
+/*메뉴가 열리는 순간 가상요소 변경*/
+.s-fullmenu > .s-f-depth1 > li:nth-child(2) a.show::after, 
+.s-fullmenu > .s-f-depth1 > li:nth-child(3) a.show::after, 
+.s-fullmenu > .s-f-depth1 > li:nth-child(5) a.show::after {
+  background: url(image/minus.png) no-repeat;
+  background-position: center;
+}
 
 /*depth3*/
-.depth3 {
+.s-depth3 {
+  background-color: #e9e9e9;
   display: none;
+  max-height: 0;
+  width:100%;
+  transition: 0.3s;
+  overflow:hidden;
 }
+.s-depth3 li{
+  padding: 0 20px;
+}
+.s-depth3 li a {
+  color: #333;
+}
+.s-depth3 li a:hover {
+  text-decoration: underline;
+}
+
+/*메뉴열리면 아이콘 변경*/
+.s-f-depth1 > .submenu > .depth2-wrap2 > .depth2 > li > a.show::after{
+  background: url(image/minus.png) no-repeat;
+  background-position: center;
+}
+
 /*작은화면 depth end*/
 
 

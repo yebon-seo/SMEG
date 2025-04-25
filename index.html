@@ -202,12 +202,12 @@
           <img src="image/credit-card-1.png" alt="">
           <a href="#">정품등록하기</a>
         </li>
-        <li><a href="#">PRODUCT</a>
-          <div class="depth2-wrap">
+        <li class="submenu"><a href="#">PRODUCT</a>
+          <div class="depth2-wrap2">
             <ul class="depth2">
-              <li>
+              <li class="borderTop">
                 <a href="#">스페셜에디션</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">SMEG x Veuve Clicquot</a></li>
                   <li class="depth3-menu"><a href="#">SMEG x D&G</a></li>
                   <li class="depth3-menu"><a href="#">SMEG x FIAT</a></li>
@@ -217,7 +217,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">대형/세미빌트인</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">냉장고</a></li>
                   <li class="depth3-menu"><a href="#">와인셀러</a></li>
                   <li class="depth3-menu"><a href="#">인덕션/후드인덕션</a></li>
@@ -231,7 +231,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">소형가전</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">전기포트</a></li>
                   <li class="depth3-menu"><a href="#">토스트기</a></li>
                   <li class="depth3-menu"><a href="#">오븐</a></li>
@@ -246,7 +246,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">홈카페</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">반자동머신</a></li>
                   <li class="depth3-menu"><a href="#">전자동머신</a></li>
                   <li class="depth3-menu"><a href="#">드립커피머신</a></li>
@@ -259,7 +259,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">쿡웨어</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">프라이팬</a></li>
                   <li class="depth3-menu"><a href="#">양수냄비</a></li>
                   <li class="depth3-menu"><a href="#">전골냄비</a></li>
@@ -270,7 +270,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">프로페셔널(전문가용)</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">오븐60리터</a></li>
                   <li class="depth3-menu"><a href="#">오븐100리터</a></li>
                   <li class="depth3-menu"><a href="#">식기세척기-언더카운터</a></li>
@@ -280,7 +280,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">추가구성품</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">오븐60리터추가구성품</a></li>
                   <li class="depth3-menu"><a href="#">반죽기추가구성품</a></li>
                   <li class="depth3-menu"><a href="#">핸드블렌더추가구성품</a></li>
@@ -294,7 +294,7 @@
             <ul class="depth2">
               <li>
                 <a href="#">서비스</a>
-                <ul class="depth3">
+                <ul class="s-depth3">
                   <li class="depth3-menu"><a href="#">GIFT</a></li>
                   <li class="depth3-menu"><a href="#">클리닝</a></li>
                   <li class="depth3-menu"><a href="#">철거/재설치</a></li>
@@ -303,9 +303,34 @@
             </ul>
           </div>
         </li>
-        <li><a href="#">COLLECTION</a></li>
+        <li><a href="#">COLLECTION</a>
+          <div class="depth2-wrap2">
+            <ul class="depth2">
+              <li class="f-depth2-menu borderTop"><a href="#">50's Style</a></li>
+              <li class="f-depth2-menu"><a href="#">Victoria</a></li>
+              <li class="f-depth2-menu"><a href="#">Dolce Stil Novo</a></li>
+              <li class="f-depth2-menu"><a href="#">Classic</a></li>
+              <li class="f-depth2-menu"><a href="#">Linea</a></li>
+              <li class="f-depth2-menu"><a href="#">SMEG X FIAT</a></li>
+              <li class="f-depth2-menu"><a href="#">SMEG X D&G</a></li>
+            </ul>
+          </div>
+        </li>
         <li><a href="#">SMEGAZINE</a></li>
-        <li><a href="#">CUSTOMER SERVICE</a></li>
+        <li><a href="#">CUSTOMER SERVICE</a>
+          <div class="depth2-wrap2">
+            <ul class="depth2">
+              <li class="f-depth2-menu borderTop"><a href="#">공지사항</a></li>
+              <li class="f-depth2-menu"><a href="#">이벤트</a></li>
+              <li class="f-depth2-menu"><a href="#">매장안내</a></li>
+              <li class="f-depth2-menu"><a href="#">자주하는질문</a></li>
+              <li class="f-depth2-menu"><a href="#">A/S신청</a></li>
+              <li class="f-depth2-menu"><a href="#">1:1문의</a></li>
+              <li class="f-depth2-menu"><a href="#">제휴/대량구매문의</a></li>
+              <li class="f-depth2-menu"><a href="#">리퍼브샵</a></li>
+            </ul>
+          </div>
+        </li>
         <li><a href="#">스메그 소개</a></li>
       </ul>
     </div>
@@ -631,25 +656,112 @@
     }
 
     /*작은화면 메뉴*/
-    const depth1Menu = document.querySelectorAll(".s-f-depth1 > li")
+    // 1차 메뉴 항목들을 모두 선택
+    const depth1Menu = document.querySelectorAll(".s-f-depth1 > li > a")
+    const depth2Menu = document.querySelectorAll(".depth2-wrap2 > .depth2 > li > a")
+    const depth2Lists = document.querySelectorAll(".depth2-wrap2")
+    const depth3Lists = document.querySelectorAll(".s-depth3")
 
+    // 각 1차 메뉴에 클릭 이벤트 등록
     depth1Menu.forEach(menu => {
       menu.addEventListener("click", () => {
-        const depth2list = menu.querySelector(".depth2-wrap")
-        const display = window.getComputedStyle(depth2list).display
-        // console.log(display)
-        if(display === "none"){
-          depth2list.style.display = "block";
-          depth2list.style.maxHeight = depth2list.scrollHeight + "px";
-        }else{
-          //모든 list 숨기기
-          depth2list.style.maxHeight = null
-          depth2list.style.display = "none"
+        // 현재 클릭된 메뉴의 다음 형제 요소가 서브메뉴임
+        const depth2list = menu.nextElementSibling
+        if (depth2list) { // 서브메뉴가 있는 경우
+
+          //해당 요소에 실제로 브라우저가 적용한 모든 CSS 스타일을 계산해서 가져옵니다.
+          const display = window.getComputedStyle(depth2list).display
+          // console.log(display)
+          if (display === "none") {  // 메뉴가 닫혀 있으면 열기
+            depth2Lists.forEach(list => {
+              if (list === depth2list) {
+                // 현재 클릭된 메뉴에만 show 클래스 추가
+                depth1Menu.forEach(m => m.classList.remove("show"));
+                // 2) 현재 클릭된 메뉴에만 'show' 클래스 추가
+                menu.classList.add("show")
+                // 3) 해당 서브메뉴 열기
+                list.style.display = "block";
+                list.style.maxHeight = depth2list.scrollHeight + "px";
+
+                // )
+              } else {
+                // 나머지 서브메뉴는 닫기
+                list.style.maxHeight = null
+                setTimeout(function () {
+                  list.style.display = "none"
+                }, 300)
+
+                depth3Lists.forEach(list => {
+                  list.style.maxHeight = null;
+                  list.style.display = "none";
+                });
+                depth2Menu.forEach(list => list.classList.remove("show"))
+              }
+            })
+          } else {
+            //모든 list 숨기기
+            depth2list.style.maxHeight = null
+            setTimeout(function () {
+              depth2list.style.display = "none"
+            }, 300)
+            // show 클래스 제거
+            menu.classList.remove("show");
+          }
+        } else {
+          // 서브메뉴가 없는 메뉴 클릭 시 → 모든 서브메뉴 닫기
+          depth2Lists.forEach(list => {
+            list.style.maxHeight = null
+            setTimeout(function () {
+              list.style.display = "none"
+            }, 300)
+          })
+          // show 클래스 제거
+          depth1Menu.forEach(m => m.classList.remove("show"));
         }
-
-
       })
     })
+
+    // 각 2차 메뉴에 클릭 이벤트 등록
+    depth2Menu.forEach(menu => {
+      menu.addEventListener("click", (e) => {
+        // 현재 클릭된 메뉴의 다음 형제 요소가 서브메뉴임
+        const depth3 = menu.nextElementSibling;
+        const depthParent = menu.closest(".depth2-wrap2");
+        // console.log(depthParent)
+        if (depth3 && depth3.classList.contains("s-depth3")) {
+
+          const display = window.getComputedStyle(depth3).display;
+          // console.log(display)
+          if (display === "none") {  // 메뉴가 닫혀 있으면 열기
+            depth3Lists.forEach(list => {
+              if (list === depth3) {
+                depth2Menu.forEach(m => m.classList.remove("show"));
+                menu.classList.add("show");
+
+                depth3.style.display = "block";
+                depth3.style.maxHeight = depth3.scrollHeight + "px";
+                depthParent.style.maxHeight = "none"
+              } else {
+                list.style.maxHeight = null;
+                setTimeout(() => {
+                  list.style.display = "none";
+                }, 300);
+              }
+            });
+
+            // )
+          } else {
+            // 나머지 서브메뉴는 닫기
+            depth3.style.maxHeight = null;
+            setTimeout(() => {
+              depth3.style.display = "none";
+            }, 300);
+            menu.classList.remove("show");
+          }
+        }
+      });
+    });
+
 
   </script>
 </body>
