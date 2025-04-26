@@ -261,8 +261,10 @@ body {
   #hover-menu > .top > .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     height: calc(100% - 60px);
+    /* border-bottom: 1px solid #e2e2e2; */
+    padding-bottom: 20px;
   }
   #hover-menu > .top > .container > .menu-btn {
     cursor: pointer;
@@ -274,6 +276,11 @@ body {
   }
   #hover-menu > .top > .container > .menu-list a{
     color: #666;
+    padding-bottom: 20px;
+    /* transition: 0.2s; */
+  }
+  #hover-menu > .top > .container > .menu-list a:hover {
+    border-bottom: 2px solid #666;
   }
   #hover-menu > .top > .container > .gnb-icon {
     display: flex;
@@ -281,6 +288,16 @@ body {
     justify-content: end;
     flex: 1;
   }
+
+  /* depth */
+  #hover-menu > .hover-depth {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 45px;
+    /* outline: 1px solid red; */
+  }
+
 
 
 
