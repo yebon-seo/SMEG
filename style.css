@@ -36,7 +36,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 100;
+  z-index: 10;
   text-align: center;
   padding: 20px 0;
   opacity: 0;
@@ -115,6 +115,7 @@ body {
   height: 45%;
   padding: 50px;
   border-bottom: 1px solid #ccc;
+  z-index: 20;
 }
 
 .full-menu-etc>.f-menu-item>.top>.f-depth1 {
@@ -236,15 +237,15 @@ body {
     height: auto;
     position: fixed;
     top: 0; left: 0;
-    z-index: 9999;
+    z-index: 10;
     background-color: #fff;
     /* padding-top: 40px; */
-    /* display: none; */
+    display: none;
   }
   #hover-menu > .top {
     max-width: 1200px;
     width: 100%;
-    height: 152px;
+    height: 162px;
     padding: 0 45px;
     margin: 0 auto;
     border-bottom: 1px solid #e2e2e2;
@@ -279,8 +280,8 @@ body {
     padding-bottom: 20px;
     /* transition: 0.2s; */
   }
-  #hover-menu > .top > .container > .menu-list a:hover {
-    border-bottom: 2px solid #666;
+  #hover-menu > .top > .container > .menu-list a.show {
+    box-shadow:inset 0 -2px 0 rgba(0, 0, 0, 0.5); /* 아래에 선처럼 보이는 얇은 그림자 */
   }
   #hover-menu > .top > .container > .gnb-icon {
     display: flex;
@@ -297,28 +298,37 @@ body {
     padding: 0 45px;
     position: relative;
     /* outline: 1px solid red; */
+    border-bottom: 1px solid #e2e2e2;
   }
   #hover-menu > .hover-depth1 > .depth2-wrap2  {
     /* outline:  1px solid red; */
-    position: relative;
+    /* position: relative; */
     height: auto;
     padding: 30px 0;
-  }
-  #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 {
     border-right: 1px solid #e2e2e2;
     width: 15vw;
-    /* outline: 1px solid black; */
   }
+  
   #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li {
     line-height: 60px;
     color: #666;
+    display: flex;
   }
+
   #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li > a {
     line-height: 60px;
     color: #666;
     display: block;
   }
+  #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li .h-depth3 li a{
+    color: #666;
+  }
+  /*hover*/
   #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li:hover > a{
+    text-decoration: underline;
+    color: #111;
+  }
+  #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li .h-depth3 li:hover a{
     text-decoration: underline;
     color: #111;
   }
@@ -326,31 +336,79 @@ body {
   /*depth3*/
   #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li > .h-depth3 {
     position: absolute;
-    top: 0;left: 15vw;
+    top: 0;
+    right: 0;
     padding: 30px 0 30px 20px;
     display: none;
-    width: 100%;
+    width: calc(100% - 274px);
     height: 100%;
+    /* outline: 1px solid red; */
   }
-  
+  /* #hover-menu > .hover-depth1 > .depth2-wrap2 > .depth2 > li > .h-depth3 > li {
+    position: relative;
+    z-index: 10;
+  } */
+  #hoverImg {
+    /* outline: 1px solid red; */
+    /* display: none; */
+    position: absolute;
+    left: 50%; /* 원하는 위치로 조정 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 430px;
+    opacity: 0;
+    object-fit: cover;
+    visibility: hidden;
+    transition: opacity 0.3s;
+  }
+  #hoverImg.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
   /*collection-tab*/
   .hover-depth2 {
-    padding: 30px 0 30px 45px;
-    position: absolute;
+    position: relative;
     top: 0; left: 0;
     /* outline: 1px solid green; */
-    display: none;
-    z-index: 9999;
-  }
-  .hover-depth2 > .depth2 {
-    height: auto;
+    /* display: none; */
+    z-index: 5;
+    background-color: #fff;
     width: 100%;
+    height: 540px;
+    border-bottom: 1px solid #e2e2e2;
   }
-  .hover-depth2 > .depth2 > li {
+  .hover-depth2 > .cover {
+    height: 100%;
+    border-right: 1px solid #e2e2e2;
+    width: 220px;
+  }
+  .hover-depth2  .depth2 {
+    padding: 30px 45px 30px 0;
+    height: auto;
+  }
+  .hover-depth2  .depth2 > li {
     line-height: 60px;
   }
-  .hover-depth1 {
-    outline: 1px solid tomato;
+  .hover-depth2  .depth2 > li a {
+    color: #666;
+  }
+  /*hover*/
+  .hover-depth2  .depth2 > li:hover {
+    color: #111;
+    text-decoration: underline;
+  }
+
+  #hoverImage2 {
+    position: absolute;
+    top: 45px;
+    left: 15vw;
+    width: calc(100% - 220px);
+    height: 400px;
+    object-fit: cover;
+    display: block; /* 기본으로 보이게 */
+    padding: 0 45px;
   }
 
 
@@ -372,7 +430,7 @@ body {
   overflow-y: scroll;
   background-color: #fff;
   transition: width 0.3s ease;
-  z-index: 999;
+  z-index: 10;
 }
 .s-menu header {
   display: flex;
@@ -719,7 +777,7 @@ body {
 }
 
 /*배경 비디오*/
-#mini-header>video {
+#mini-header > video {
   position: absolute;
   width: 100%;
   height: 60vh;
