@@ -7,10 +7,13 @@
   <title>SMEG</title>
   <!-- 폰트어썸 -->
   <script src="https://kit.fontawesome.com/63c7e48b93.js" crossorigin="anonymous"></script>
+  <!-- 플랫티콘 -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <button id="topbtn"><i class="fi fi-rr-arrow-small-up"></i></button>
   <!-- fixed menu -->
   <div class="fixed">
     <div class="full-menu-box">
@@ -338,29 +341,40 @@
      <div id="hover-smegazine">
       <div class="flex-wrap">
         <article>
-          <img src="image/megazine1.jpg" alt="">
-          <p>[Home Cook Recipe] 홈파티 메뉴, 스파이스 폭립과 사과살사 with 제리코레서피</p>
+          <div class="inner">
+            <img src="image/megazine1.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 홈파티 메뉴, 스파이스 폭립과 사과살사 with 제리코레서피</p>
+          </div>
         </article>
         <article>
-          <img src="image/megazine2.jpg" alt="">
-          <p>[Home Cook Recipe] 겉바속촉 콜리플라워 요리 with 제리코레서피
-          </p>
+          <div class="inner">
+            <img src="image/megazine2.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 겉바속촉 콜리플라워 요리 with 제리코레서피</p>            
+          </div>
         </article>
         <article>
-          <img src="image/megazine3.jpg" alt="">
-          <p>[Home Cook Recipe] 간단하지만 근사한 채소 그라탕 with 제리코레서피</p>
+          <div class="inner">
+            <img src="image/megazine3.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 간단하지만 근사한 채소 그라탕 with 제리코레서피</p>
+          </div>
         </article>
         <article>
-          <img src="image/megazine4.jpg" alt="">
-          <p>[Home Cook Recipe] 브런치로 즐기는 더치 베이비 팬케이크 with 제리코레서피</p>
+          <div class="inner">
+            <img src="image/megazine4.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 브런치로 즐기는 더치 베이비 팬케이크 with 제리코레서피</p>
+          </div>
         </article>
         <article>
-          <img src="image/megazine5.jpg" alt="">
-          <p>[Home Cook Recipe] 피자를 닮은 쥬키니 스카르파치아 with 제리코레서피</p>
+          <div class="inner">
+            <img src="image/megazine5.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 피자를 닮은 쥬키니 스카르파치아 with 제리코레서피</p>
+          </div>
         </article>
         <article>
-          <img src="image/megazine6.jpg" alt="">
-          <p>[Home Cook Recipe] 건강한 오븐 요리, 상큼한 오렌지 치킨 & 오렌지 살사 with 마벨메종</p>
+          <div class="inner">
+            <img src="image/megazine6.jpg" alt="">
+            <p>[Home Cook Recipe]<br> 건강한 오븐 요리, 상큼한 오렌지 치킨 & 오렌지 살사 with 마벨메종</p>
+          </div>
         </article>
 
       </div>
@@ -780,7 +794,19 @@
     const fixedMenu = document.querySelector(".fixed");
     const cBTn = document.querySelector(".close-btn");
     const container = document.querySelector("#hover-menu");
-    // console.log(menuBtn)
+    const topBtn = document.querySelector("#topbtn");
+
+    window.onscroll = function() {
+      if(document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      }else {
+        topBtn.style.display = "none";
+      }
+    }
+    topBtn.addEventListener("click", function() {
+      window.scrollTo({ top:0, behavior: "smooth"})
+    })
+
 
     menuBtn.forEach(btn => btn.addEventListener("click", () => {
       console.log(menuBtn)
