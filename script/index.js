@@ -197,12 +197,14 @@ depth2Menu.forEach(menu => {
 
 const sCbtn = document.querySelector(".s-cBtn") //닫기버튼
 const sMenu = document.querySelector(".s-menu") //작은화면 사이드메뉴
-const menuBtn2 = document.querySelector(".gnb-wrap .menu-btn2") //작은화면 헤더 메뉴아이콘
+const menuBtn2 = document.querySelector(".menu-btn2 img") //작은화면 헤더 메뉴아이콘
 
 //메뉴버튼 클릭시 이벤트
 menuBtn2.addEventListener("click", () => {
-  sMenu.style.width = "100%"
-  // sMenu.style.display = "block"
+  sMenu.style.display = "block"
+  setTimeout(() => {
+    sMenu.style.width = "100%"
+  }, 10)
 })
 
 //닫기버튼
